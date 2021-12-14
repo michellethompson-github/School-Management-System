@@ -1,0 +1,396 @@
+/*
+nav {
+  background: #e52526;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: right;
+  min-height: 10vh;
+
+}
+*/
+/* Colors */ 
+$errorColor: red;
+$specialRed: #e52526;
+$navlinksColor: white;
+$blackColor: black;
+$bodyBackgroundColor: #ebeef0;
+$dropdownBackground: #f9f9f9;
+$headingColor: #495d66;
+
+/* Decorations */
+$noTextDecoration: none;
+
+/* Displays */
+$noDisplay: none;
+$inlineDisplay: inline;
+$blockDisplay: block;
+
+/* Positioning */
+$relativePosition: relative;
+
+/* Floats */
+$rightFloat: right;
+$leftFloat: left;
+
+/* Text Align */
+$centerAlign:center;
+$leftAlign:left;
+
+/* Margins */
+$topMargin: 100px; 
+$formcontrolMargins: 40px 5px;
+$tableMargins: 2em 6em;
+
+/* Font Family */
+$fontFamily: Verdana; 
+
+/* Shadows */
+$dropdownShadow : 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+@mixin body-content {
+  font-family: 'Poppins', sans-serif;
+  background-color: $bodyBackgroundColor;
+}
+
+.error-msg {
+  color:$errorColor;
+}
+
+body {
+  @include body-content;
+}
+
+/*
+.nav-links {
+  list-style: none;
+  margin: 0 15px;
+}
+*/
+
+.nav-links {
+  li {
+    display: $inlineDisplay;
+    
+  }
+  a {
+    color:$navlinksColor;
+    text-decoration: $noTextDecoration;
+    margin: 0 10px;
+  }
+
+}
+
+/* .nav-links li  */
+
+/* input {
+  border-radius: 0px;
+  font-size: 20px;
+} */
+.sign-up {
+  color: $blackColor;
+}
+
+/*
+.downward-arrow {
+  cursor: pointer;
+  margin: 5px 20px;
+}
+*/
+
+.right-menu { 
+  position: $relativePosition;
+  float: $rightFloat;
+}
+
+.dropdown {
+  display: $noDisplay;
+  position: absolute;
+  background-color: $dropdownBackground;
+  min-width: 160px;
+  right: 0;
+  box-shadow: $dropdownShadow;
+  z-index: 1;
+}
+
+.dropdown a {
+  color: $blackColor;
+  padding: 12px 16px;
+  text-decoration: $noTextDecoration;
+  display: $blockDisplay;
+}
+.dropdown a:hover {
+  background-color: $blackColor;
+  color: $navlinksColor;
+}
+.right-menu:hover .dropdown{
+  display: $blockDisplay;
+}
+.right-menu:hover .menu-button {
+  background-color: transparent;
+}
+
+/*
+.register {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+*/
+/* For All Screen Sizes */
+ /* form-control class for giving spacing to the form fields */
+ .form-control {
+  margin: $formcontrolMargins; 
+  /* margin: top right bottom left (4)*/
+   /* margin: top left-right bottom (3)*/
+  /* margin: top-bottom left-right (2)*/
+}
+
+label {
+  margin: 0 13px;
+}
+
+/*  Styling for input fields */
+.styled-input {
+  padding: 7px 10px;
+
+}
+
+.account {
+  margin: 20px 0 0 0;
+}
+
+.container input, .container select {
+  float:$rightFloat;
+ 
+}
+
+.container .form-control {
+  text-align: $leftAlign;
+}
+
+
+/* Mobile View */
+@media (max-width: 776px) {
+  
+
+  div{
+    text-align:$centerAlign;
+
+  }
+
+  .company-name{
+
+    color: $specialRed;
+    text-align: $centerAlign;
+    margin-top: $topMargin;
+    font-family: $fontFamily;
+    font-size: 25px;
+  }
+  h2 {
+    text-align: $centerAlign;
+    margin-top: $topMargin;
+    color: $headingColor;
+  }
+  
+  .register-button {
+    display: $noDisplay;
+  }
+
+  .container {
+    margin:0 4rem;
+  }
+
+  .container input, .container select {
+    width: 130px;
+  }
+
+  .nav-links {
+    display: $noDisplay;
+  }
+
+  .account-text {
+    margin: 10px 0;
+  }
+
+    .bottom-spacing {
+    margin-bottom:30px;
+  }
+
+  div {
+    h1 {
+      text-align: $centerAlign; 
+    }
+  } 
+
+  .table-styling {
+    margin: 1em 2em;
+  }
+}
+
+@media (min-width: 776px) {
+  .container {
+    margin:0 5rem;
+  }
+
+  .downward-arrow {
+    display: $noDisplay;
+  }
+
+  .nav-links {
+    display: $blockDisplay;
+  }
+
+  .company-name {
+    color: $specialRed;
+    text-align: $centerAlign;
+    margin-top: $topMargin;
+    font-family: $fontFamily;
+    font-size: 35px;
+  }
+
+  h2 {
+    text-align: $centerAlign;
+    margin-top: $topMargin;
+    color: $headingColor;
+    font-size: 30px;
+  }
+  label {
+    font-size: 24px;
+  }
+  input, select {
+    border-radius: 0px;
+    font-size: 30px;
+  }
+
+  /*
+  button {
+    font-size: 25px;
+    border-radius: 8px;
+    border: 3px solid black;
+    cursor: pointer;
+    background-color: #e52526;
+  }
+
+  */
+
+  div{
+    text-align:$centerAlign;
+
+  }
+
+  div .heading {
+    color: $headingColor;
+  
+  }
+
+  .table-styling {
+    margin: 1em 4em;
+  }
+
+  .login {
+    font-size:18px;
+    margin: 5px 0 20px;
+    padding: 6px 13px;
+    background-color: $blackColor;
+    color:$navlinksColor;
+    border-radius: 4px;
+  }
+  
+  .login:hover {
+    transition: 0.5s all;
+    border: 1px solid $blackColor;
+    color:$blackColor;
+    background-color: $navlinksColor;
+  }
+
+}
+
+@media (min-width: 1280px) {
+ 
+  .company-name{
+    color: $specialRed;
+    text-align: $centerAlign;
+    margin-top: $topMargin;
+    font-family: $fontFamily;
+    font-size: 45px;
+  }
+  h2 {
+    /* text-align: center; */
+    float: $leftFloat;
+    /* margin-top: 300px; */
+    margin: {
+      top: 40px;
+      left: 300px;
+    }
+
+    color: $headingColor;
+    font-size: 45px;
+  }
+
+  .account-text {
+    margin: 20px 0;
+
+  }
+
+  input, select {
+    border-radius: 0px;
+    font-size: 20px;
+  }
+  /*
+  nav {
+    display: none;
+  
+  }
+  */
+
+  .container {
+    margin: 3rem 14rem;
+  }
+
+  .container .form-control {
+    text-align: $leftAlign;
+  }
+
+  .container input, .container select {
+  width:380px;
+}
+
+button.login {
+  color:$navlinksColor;
+  background: $blackColor;
+  padding: 10px 18px;
+  border: 1px solid $blackColor;
+  border-radius: 0;
+  margin: 50px 0;
+}
+
+.styled-input {
+  margin: 0 20px;
+}
+
+.table-styling {
+  margin: $tableMargins;
+}
+
+.login {
+  margin: 5px 0 20px;
+  padding: 8px 15px;
+  background-color: $blackColor;
+  color:$navlinksColor;
+  border-radius: 4px;
+}
+
+.login:hover {
+  transition: 0.5s all;
+  border: 1px solid $blackColor;
+  color:$blackColor;
+  background-color: $navlinksColor;
+}
+
+}
+
+
+
+
+/*  Table Styling */
